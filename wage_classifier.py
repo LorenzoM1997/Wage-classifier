@@ -1,19 +1,22 @@
+# made by Lorenzo Mambretti
+# for the Neural Network Project with the Cognitive Science Club at UC Davis
+
 import tensorflow as tf
 import numpy as np
 import random
 
 print("Starting program")
 
-# inpuy matrix
+# input matrix
 data_input = np.zeros((0,23))
 
 # output matrix
 data_output = np.zeros((0,1))
 
-#input file for the data
+# input file for the data
 input_file = open("adult_norm.txt","r")
 
-#read each line of the file and write the data into the matrices
+# read each line of the file and write the data into the matrices
 for line in input_file:
     new_input = np.zeros((1,23))
    
@@ -48,7 +51,7 @@ test_file.close()
 print("Test dataset aquired")
 
 # declare all variables for our model
-# it has 3 layers
+# it has 3 layers (one hidden layer)
 x = tf.placeholder(tf.float32, [None, 23])
 W1 = tf.Variable(tf.random_uniform([23, 8]))
 W2 = tf.Variable(tf.random_uniform([8, 1]))
